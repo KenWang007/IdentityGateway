@@ -66,11 +66,11 @@ services:
     networks:
       - private
 
-#  nginx:
-#    build: ./nginx
-#    container_name: nginx_server
-#    ports:
-#      - "443:443"
+  nginx:
+    build: ./nginx
+    container_name: nginx_server
+    ports:
+      - "8083:8083"
 
 volumes:
   sqldata:
