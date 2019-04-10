@@ -1,25 +1,19 @@
 {
   "ReRoutes": [
     {
-      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamPathTemplate": "/api/order",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "192.168.191.3",
           "Port": 5001
-        },
-        {
-          "Host": "localhost",
-          "Port": 5002
         }
       ],
-      "UpstreamPathTemplate": "/{url}",
-      "UpstreamHttpMethod": [ "Get","POST" ],
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin"
-      },
+      "ReRouteIsCaseSensitive": false,
+      "UpstreamPathTemplate": "/api/getorder",
+      "UpstreamHttpMethod": [ "Get" ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
+        "AuthenticationProviderKey": "OrderIdentityKey",
         "AllowedScopes": []
       }
     }
